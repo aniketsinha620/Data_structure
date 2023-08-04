@@ -37,7 +37,7 @@ void inset_first(struct Node *head, int data)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     ptr->data = data;
-    ptr->next = NULL;
+    // ptr->next = NULL;
     if (head == NULL)
     {
         head = ptr;
@@ -48,6 +48,47 @@ void inset_first(struct Node *head, int data)
         ptr->next = head;
         head = ptr;
     }
+    display(head);
+}
+
+struct Node *search(struct Node *ptr, int data)
+{
+    struct Node *temp = ptr;
+    while (ptr->next != NULL)
+    {
+        if (ptr->data == data)
+            cout << "found the element" << ptr->data << endl;
+
+        ptr = ptr->next;
+    }
+
+    if (ptr->data == data)
+        cout << "found the element" << ptr->data << endl;
+}
+
+struct Node *insertBeforeLast(struct Node *head, int data)
+{
+    struct Node *ptr = head;
+    struct Node *ptr1 = head->next;
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    temp->data = data;
+
+    while (ptr1->next != NULL)
+    {
+        ptr = ptr->next;
+        ptr1 = ptr->next;
+    }
+    ptr->next = temp;
+    temp->next = ptr1;
+
+    display(head);
+}
+
+struct Node *delete_node(struct Node *head)
+{
+    struct Node *temp = head;
+    head = head->next;
+    free(temp);
     display(head);
 }
 
@@ -73,9 +114,15 @@ void create()
     second->next = NULL;
 
     // display(head);
-    // inset_first(head, 22);
-    insert_mid(head, 22, 2);
+    // inset_first(head, 00);
     display(head);
+    cout << endl;
+    // insert_mid(head, 22, 2);
+    // display(head);
+    // search(head,3);
+    // display(head);
+    delete_node(head);
+    // insertBeforeLast(head, -4);
 }
 
 int main()

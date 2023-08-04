@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/win11/Desktop/Data_str",
-      "program": "c:/Users/win11/Desktop/Data_str/build/Debug/outDebug",
+      "cwd": "c:/project/Data_str",
+      "program": "c:/project/Data_str/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
