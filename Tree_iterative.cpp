@@ -21,7 +21,7 @@ struct node *create_node(int key)
 struct node *preorder(struct node *ptr)
 {
     // root[left][right]
-    stack<struct node *> s;
+    stack<struct node *> s; 
     while (ptr != NULL || s.empty() == false)
     {
         while (ptr != NULL)
