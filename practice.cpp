@@ -1,77 +1,46 @@
-#include <bits/stdc++.h>
-using namespace std;
+/**
+ * Definition of linked list:
+ *
+ * class Node {
+ * public:
+ *      int data;
+ *      Node *next;
+ *      Node() {
+ *          this->data = 0;
+ *          this->next = NULL;
+ *      }
+ *      Node(int data) {
+ *          this->data = data;
+ *          this->next = NULL;
+ *      }
+ *      Node (int data, Node *next) {
+ *          this->data = data;
+ *          this->next = next;
+ *      }
+ * };
+ *
+ *************************************************************************/
 
-struct Node
+Node *addOne(Node *head)
 {
-    int data;
-    struct Node *next;
-};
-
-bool isFull()
-{
-    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
-
-    if (temp == NULL)
-        return true;
-
-    return false;
-}
-
-bool isEmpty(struct Node *ptr)
-{
-    if (ptr == NULL)
-        return true;
-
-    return false;
-}
-
-struct Node *display(struct Node *ptr)
-{
-    while (ptr != NULL)
-    {
-
-        cout << ptr->data << " ";
-        ptr = ptr->next;
-    }
-
-    cout << endl;
-}
-
-struct Node *push(struct Node *ptr, int data)
-{
-
-    if (!isFull())
-    {
-
-        struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
-        temp->data = data;
-        temp->next = ptr;
-        ptr = temp;
-
-        return ptr;
-    }
-}
-
-struct Node *pop(struct Node *ptr)
-{
-    if (!isEmpty(ptr))
-    {
-        ptr = ptr->next;
-        return ptr;
-    }
-}
-
-int main()
-{
-
-    struct Node *top = NULL;
-    top = push(top, 3);
-    top = push(top, 4);
-    top = push(top, 5);
-    top = push(top, 6);
-   
-    display(top);
-    top=pop(top);
-    display(top);
-    return 0;
+	Node *ptr = head;
+	int sum = 0;
+	while (ptr)
+	{
+		sum = sum * 10 + ptr->data;
+		ptr = ptr->next;
+	}
+	sum += 1;
+	Node *curr = nullptr;
+	int temp = 0;
+	while (sum)
+	{
+		int x = sum % 10;
+		temp = temp * 10 + x;
+		sum = sum / 10;
+	}
+	while (temp)
+	{
+		Node *curr = nullptr;
+	}
 }
