@@ -1,39 +1,60 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <set>
+
 using namespace std;
 
-int main()
-{
-    int n, m;
+class Solution {
+public:
+    void kpt(vector<int> arr, int k, int i, vector<int> dp, int sum, set<vector<int>>& s) {
 
-    cin >> n >> m;
-
-    int arr[n][m];
-
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            cin >> arr[i][j];
+        if (i >= arr.size()) {
+            if (sum == k) {
+                sort(dp.begin(), dp.end());
+                s.insert(dp);
+                cout<<"hello"<<dp[0];
+                return;
+            }
+            return;
         }
+        sum += arr[i];
+        dp.push_back(arr[i]);
+        kpt(arr, k, i + 1, dp, sum, s);
+        sum -= arr[i];
+        dp.pop_back();
+        kpt(arr, k, i + 1, dp, sum, s);
     }
 
-    // Output the entire matrix
-  int f=0;
-  bool ans=true;
-  for(int i=0;i<m;i++){
-    ans=true;
-    for(int j=0;j<n;j++){
-        if(arr[j][i]!=1){
-            ans=false;
-            break;
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        vector<int> dp;
+        set<vector<int>> s;
+        kpt(candidates, target, 0, dp, 0, s);
+        vector<vector<int>> v1;
+        for (auto &i : s) {
+            v1.push_back(i);
         }
+        return v1;
     }
-    if(ans){
-        f++;
+};
+
+int main() {
+    Solution solution;
+
+    // Example usage:
+    vector<int> candidates = {10, 1, 2, 7, 6, 1, 5};
+    int target = 8;
+
+    vector<vector<int>> result = solution.combinationSum2(candidates, target);
+
+    // Displaying the result
+    for (const auto& vec : result) {
+        cout << "[ ";
+        for (int num : vec) {
+            cout << num << " ";
+        }
+        cout << "]" << endl;
     }
-    
-  }
-  cout<<f;
 
     return 0;
 }

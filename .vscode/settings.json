@@ -37,9 +37,11 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp.errorSquiggles": "disabled",
   "files.associations": {
+    "*.ejs": "html",
     "ostream": "cpp",
     "iostream": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "vector": "cpp"
   },
   "C_Cpp_Runner.msvcWarnings": [
     "/W4",
