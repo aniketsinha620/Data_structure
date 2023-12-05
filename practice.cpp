@@ -1,46 +1,35 @@
-/**
- * Definition of linked list:
- *
- * class Node {
- * public:
- *      int data;
- *      Node *next;
- *      Node() {
- *          this->data = 0;
- *          this->next = NULL;
- *      }
- *      Node(int data) {
- *          this->data = data;
- *          this->next = NULL;
- *      }
- *      Node (int data, Node *next) {
- *          this->data = data;
- *          this->next = next;
- *      }
- * };
- *
- *************************************************************************/
+#include <bits/stdc++.h>
+using namespace std;
 
-Node *addOne(Node *head)
+int main()
 {
-	Node *ptr = head;
+	int n, m;
+	cin >> n >> m;
+	int arr[n];
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+	sort(arr, arr + n);
+	int i = 0;
+	int j=n-1;
 	int sum = 0;
-	while (ptr)
+	int ans = 0;
+	bool verify = true;
+	// for (int i = 0; i < n; i++)
+	// 	cout << arr[i] << " ";
+	while (i <=j)
 	{
-		sum = sum * 10 + ptr->data;
-		ptr = ptr->next;
+
+		if((arr[i]+arr[j])>m){
+			ans++;
+			j--;
+		}
+		else if((arr[i]+arr[j])<=m){
+			ans++;
+			j--;i++;
+		}
 	}
-	sum += 1;
-	Node *curr = nullptr;
-	int temp = 0;
-	while (sum)
-	{
-		int x = sum % 10;
-		temp = temp * 10 + x;
-		sum = sum / 10;
-	}
-	while (temp)
-	{
-		Node *curr = nullptr;
-	}
+	cout << ans << endl;
+	return 0;
 }

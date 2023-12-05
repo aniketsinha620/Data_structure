@@ -1,5 +1,5 @@
 
-// if the distinct number in the array
+// if the distinct number in the array any time we can take the chararcter in any frequency
 
 #include <bits/stdc++.h>
 using namespace std;
