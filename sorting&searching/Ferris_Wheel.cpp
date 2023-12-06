@@ -25,8 +25,7 @@ int main()
     int sum = 0;
     int ans = 0;
     bool verify = true;
-    // for (int i = 0; i < n; i++)
-    // 	cout << arr[i] << " ";
+ 
     while (i <= j)
     {
 
