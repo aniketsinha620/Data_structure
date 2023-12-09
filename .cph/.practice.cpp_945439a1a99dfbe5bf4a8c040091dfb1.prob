@@ -1,1 +1,0 @@
-{"name":"Local: practice","url":"c:\\project\\Data_str\\practice.cpp","tests":[{"id":1698417591166,"input":"10 10\n9 3 9 6 6 8 6 2 6 3\n9 5 4 6 3 9 3 3 5 2","output":"2\n2\n2\n-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\project\\Data_str\\practice.cpp","group":"local","local":true}
