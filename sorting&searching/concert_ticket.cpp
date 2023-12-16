@@ -4,10 +4,10 @@ using namespace std;
 
 int main()
 {
-    ll n, q;       
-    cin >> n >> q; 
+    ll n, q;
+    cin >> n >> q;
 
-    multiset<ll> s; 
+    multiset<ll> s;
     for (int i = 0; i < n; i++)
     {
         ll x;
@@ -19,7 +19,7 @@ int main()
     {
         ll x;
         cin >> x;
-        auto y = s.upper_bound(x); 
+        auto y = s.upper_bound(x);
         if (y == s.begin())
         {
             cout << "-1" << endl;
