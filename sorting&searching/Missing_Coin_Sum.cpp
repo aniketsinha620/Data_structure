@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define ll int long long
 using namespace std;
-// minimum sum not present
+
 int main()
 {
     ll n;
